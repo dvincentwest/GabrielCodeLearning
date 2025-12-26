@@ -32,6 +32,8 @@ GREEN   = '\033[92m'
 YELLOW  = '\033[33m'
 BLUE    = '\033[34m'
 
+guesses = []
+
 while True:
 
     # --- FIRST GET THE GUESS --- #
@@ -93,7 +95,9 @@ while True:
 
     # --- SHOW ALPHABET GUESS RECORD --- #
 
-    print("".join(hint))
+    guesses.append("".join(hint))
+    for g in guesses:
+        print(g)
 
     for i, letter in enumerate(alphabet_sorted):
         if letter in letters_correct:
